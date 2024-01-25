@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{%for game in games%}
+<div class="card" id="l" onclick="window.location.href='/library/{{game.id}}'">
+    <img class="ati-motam-picturum" src="{{url_for('static', filename='logo.png')}}">
+    <div style="text-align: center;">
+        <h3>{{game.name}}</h3>
+    </div>
+</div>
+{%endfor%}
+{% endblock %}

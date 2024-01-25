@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{%for game in games%}
+<table>
+    <tr>
+        <th>S no.</th>
+        <th>Name</th>
+        <th>Version</th>
+        <th>Download</th>
+    </tr>
+    <tr>
+        <td>{{game.id}}</td>
+        <td>{{game.name}}</td>
+        <td>{{game.version}}</td>
+        <td><button class = "button red"onclick="window.location.href='{{game.link}}'">Download</button></td>
+    </tr>
+</table>
+{%endfor%}
+{% endblock %}

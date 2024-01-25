@@ -1,0 +1,252 @@
+html{
+    cursor: none;
+}
+
+body {
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text color */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Choose a suitable font */
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #575050;
+}
+
+a{
+    text-decoration: none;
+    color: #cabebe;
+}
+
+nav {
+    background-color: #000; /* Black background color for the navigation bar */
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 998;
+}
+
+#menuButton{
+    visibility: hidden;
+}
+
+nav a {
+    color: #fff; /* White text color for navigation links */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    z-index: 998;
+}
+@media only screen and (max-width: 600px) {
+    nav a {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 998;
+    }
+    #custom-cursor{
+        visibility: hidden;
+    }
+    #center-pint{
+        visibility: hidden;
+    }
+    #menuButton {
+        display: block;
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        visibility: visible;
+      }
+
+      #menu {
+        display: none;
+        position: absolute;
+        top: 60px; /* Adjust the top position as needed */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        z-index: 998;
+      }
+
+      #menu a {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+      }
+  }
+.big_h1{
+    font-size:100px;
+    text-align:center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.centre_h3{
+    text-align:center;
+    animation-name:appear;
+    animation-duration:1s;
+}
+.centre_h4 {
+    text-align: center;
+    animation-name: appear;
+    animation-duration: 2s;
+}
+.centre_h5 {
+    text-align: center;
+    animation-name: appear;
+    animation-duration: 3s;
+}
+.centre-div {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}
+.cool_button{
+    border: none;
+    border-radius: 20px;
+    background-color:gray;
+    color:white;
+    width: 50%;
+}
+.p {
+    color: #555;
+}
+.join_but{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #7289da;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            animation: shakeAnimation 1s ease infinite; /* Shake animation */
+}
+.join_but:hover {
+    background-color: #5468a7;
+    animation: none
+}
+.h1 {
+    font-size: 2em;
+    color: #36a2e5; /* Shining blue color */
+    text-shadow: 0 0 10px #36a2e5, 0 0 20px #36a2e5, 0 0 30px #36a2e5; /* Blue text shadow effect */
+}
+.container {
+    background-color: #404040; /* Dark gray background color for the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    width: 80%; /* Set a width for the container */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    text-align: center;
+    transform: translate(50%, 50%);
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+.card{
+    position: relative;
+    width: 40%;
+    background-color: rgba(0, 200, 255, 1);
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px black;
+    transition: 0.5s;
+}
+.card:hover{
+    box-shadow: 0px 0px;
+    background-color: rgba(0, 200, 255, 0.5);
+}
+.ati-motam-picturum{
+    width: 50%;
+}
+.red{
+    background-color: rgba(172, 52, 52, 0.74);
+}
+.red:hover{
+    background-color: rgba(172, 52, 52, 0.3);
+}
+.about_div{
+    width: 95%;
+    background-color: whitesmoke;
+    margin: auto;
+    border-radius: 5px;
+    color: #404040;
+    padding: 10px;
+}
+
+  #custom-cursor {
+    z-index: 999;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid  #7a42f4;
+    border-radius: 50%;
+    pointer-events: none; /* Ensure the cursor doesn't interfere with other elements */
+    animation: pulse 1s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #center-point {
+    width: 4px;
+    height: 4px;
+    background-color:  #3e87d1;
+    border-radius: 50%;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      border-radius: 25%;
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+@keyframes appear {
+    from{opacity:0}
+    to{opacity:1}
+}
+@keyframes shakeAnimation {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+    <h2>{{game.name}}</h2> 
+    <div style="text-align: right;">
+        <button class="button red" onclick="window.location.href='{{game.link}}'">Download now!</button>
+    </div>
+</div>
+<br>
+<div class="about_div">
+    <p>{{game.about}}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="#" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="gname" placeholder="Enter your name" required>
+    <br>
+    <label for="name">Version:</label>
+    <input type="number" id="Version" name="version" placeholder="version" required>
+    <br>
+    <label for="link">Link:</label>
+    <input type="url" id="link" name="link" placeholder="Enter a link" required>
+
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
