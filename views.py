@@ -13,7 +13,6 @@ app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///games.db'
 
 db= SQLAlchemy(app)
-#db1= SQLAlchemy(app)
 
 
 class Games(db.Model):
@@ -36,7 +35,6 @@ class PreGames(db.Model):
 
 with app.app_context():
     db.create_all()
-    #db1.create_all()
 
 @app.route('/')
 @app.route('/home')
