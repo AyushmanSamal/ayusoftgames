@@ -10,11 +10,18 @@ body {
 }
 table {
   font-family: arial, sans-serif;
-  border-collapse: collapse;
+  border-collapse: separate;
   width: 100%;
+  border-spacing: 0;
 }
 
-td, th {
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    border-style: none solid solid none;
+    padding: 8px;
+  }
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -23,6 +30,14 @@ td, th {
 tr:nth-child(even) {
   background-color: #575050;
 }
+tr:first-child th:first-child { border-top-left-radius: 10px; }
+tr:first-child th:last-child { border-top-right-radius: 10px; }
+
+tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+
+tr:first-child td { border-top-style: solid; }
+tr td:first-child { border-left-style: solid; }
 
 a{
     text-decoration: none;
@@ -179,7 +194,7 @@ nav a {
     margin: auto;
     text-align: center;
     border-radius: 20px;
-    box-shadow: 10px 10px black;
+    box-shadow: 2px 2px black;
     transition: 0.5s;
 }
 .card:hover{
@@ -203,6 +218,35 @@ nav a {
     color: #404040;
     padding: 10px;
 }
+.slider-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slide {
+    flex: 0 0 100%;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
 
   #custom-cursor {
     z-index: 999;
@@ -247,6 +291,6 @@ nav a {
         transform: translateX(-5px);
     }
     20%, 40%, 60%, 80% {
-        transform: translateX(5px);
+        transform: translate(5px);
     }
 }

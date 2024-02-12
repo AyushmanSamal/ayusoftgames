@@ -1,13 +1,57 @@
-{% extends "layout.html" %}
-
-{% block content %}
-
-{%for game in games%}
-<div class="card" id="l" onclick="window.location.href='/library/{{game.id}}'">
-    <img class="ati-motam-picturum" src="{{url_for('static', filename='logo.png')}}">
-    <div style="text-align: center;">
-        <h3>{{game.name}}</h3>
+{%extends 'layout.html'%}
+{%block content%}
+<div class="slider-container">
+    <div class="slider">
+      {% for game in games %}
+      <div class="slide">
+          <div class="card" id="l" onclick="window.location.href='/library/{{ game.id }}'">
+              <div style="text-align: center; font-size:xx-large;">
+                  <h1>{{ game.name }}</h1>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
     </div>
-</div>
-{%endfor%}
-{% endblock %}
+    <div style="text-align:center;">
+        <h4 style="display: inline;" id="gameIndex"></h4>
+        <h4 style="display: inline;">/</h4>
+        <h4 id="numOfGames" style="display: inline;"></h4>
+    </div>
+    <button class="prev" onclick="prevSlide()">Previous</button>
+    <button class="next" onclick="nextSlide()">Next</button>
+</div>  
+<script>
+    let slideIndex = 0;
+    var numOfGames = document.getElementById('numOfGames');
+    var gIndex = document.getElementById('gameIndex');
+    const slides = document.querySelectorAll('.slide');
+    function showSlides() {
+    numOfGames.textContent = slides.length;
+    gIndex.textContent = slideIndex+1;
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
+    const slideWidth = slides[0].clientWidth;
+    const offset = -slideIndex * slideWidth;
+    document.querySelector('.slider').style.transform = `translateX(${offset}px)`;
+    }
+
+    function nextSlide() {
+    if(slideIndex != slides.length -1){
+        slideIndex++;
+    }else{
+        slideIndex = 0;
+    }
+    showSlides();
+    }
+
+    function prevSlide() {
+    slideIndex--;
+    showSlides();
+    }
+
+    showSlides();
+</script>
+{%endblock%}

@@ -12,7 +12,7 @@
 
         <div class="div_nav">
             <button id="menuButton">&#9776; Menu</button>
-            <div id="menu">
+            <div id="menu" style="align-content: center;">
                 <h2>AYU/SOFT GAMES</h2> <img src="{{url_for('static', filename='logo.png')}}">
                 <a href={{url_for('home')}}>Home</a>
                 <a href={{url_for('about')}}>About</a>
@@ -27,8 +27,11 @@
     <div id="custom-cursor">
         <div id="center-point"></div>
     </div>
-    {%block content%}
-    {%endblock%}
+        
+        <div id="rcb">
+            {%block content%}
+            {%endblock%}
+        </div>
     <script src="{{url_for('static', filename='scrpt.js')}}"></script>
 </body>
 </html>
